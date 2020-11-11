@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="StaticStructure.master.cs" Inherits="e_Library_mgmt.StaticStructure" %>
+
+<!DOCTYPE html>
+
+<html>
+
+    <!--This page is only our structure page, it cant directly be ran, only the content pages created in the master page can be
+        ran, the structure page is a static page that combined with the content page which had the components controlls defined, 
+        they can be merged together with the content page, the master page sets the structure, the staticheader and footer-->
+<head runat="server">
+    <title></title>
+
+    <%--Bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+     <%--Datatables css--%>
+    <link href="Datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+     <%--Fontawsome css--%>
+    <link href="Fontawsome/css/all.css" rel="stylesheet" />
+     <%--Custom css--%>
+    <link href="css/CustomrStylesheet.css" rel="stylesheet" />
+
+     <%--JQuery js--%>
+    <script src="bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+     <%--Popper js--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+     <%--Bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <%--Datatable js--%>
+    <script src="Datatables/js/jquery.dataTables.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <div>
+          
+               <!-- Top header static Navigation -->
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="fa-sm" href="#">
+                     <asp:LinkButton Class="fas fa-books fa-university" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click"
+                                 >e-library</asp:LinkButton></a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                        <!-- Overall/ Left Navigation -->
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                         <li class="nav-item active">
+                             <a class="nav-link" href="homepage.aspx">Home </a>
+                         </li>
+                           <li class="nav-item">
+                             <a class="nav-link" href="#">About Us</a>
+                                </li>
+                        <li class="nav-item">
+                             <a class="nav-link" href="#">Terms</a>
+                                </li>
+                        </ul>
+
+                     <!-- Right Wing Nav -->
+                            <ul class="navbar-nav">
+                         <li class="nav-item active">
+                             <asp:LinkButton Class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click"
+                                 >View Books</asp:LinkButton>
+                             </li>
+                                 <li class="nav-item active">
+                             <asp:LinkButton Class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click"
+                                 >User Login</asp:LinkButton>
+                             </li>
+                                 <li class="nav-item active">
+                             <asp:LinkButton Class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click"
+                                >Sign Up</asp:LinkButton>
+                             </li>
+                                 <li class="nav-item active">
+                             <asp:LinkButton Class="nav-link" ID="LinkButton4" runat="server" Visible="false" OnClick="LinkButton4_Click1"
+                                 >Logout</asp:LinkButton>
+                             </li>
+                                 <li class="nav-item active">
+                             <asp:LinkButton Class="nav-link" ID="LinkButton5" runat="server" Visible="false" OnClick="LinkButton5_Click"
+                                 >Hi User</asp:LinkButton>
+                             </li>
+                                </ul>
+                    </div>
+
+            </nav>
+
+        </div>
+
+        <div>
+            <!--Main Content Placeholder-->
+            <!--Content Controls/dont have to add anything in this contentplaceholder, we just need it here as a structure so it
+                can be called on the content page, we only get to define the content inside when we are at the content page, on the other
+                side of the page, the .aspx-->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+        </div>
+        <!--Main Content Placeholder-->
+
+        <!--Footer Navigation-->
+        
+        <footer>
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 text-center">
+                        <p>
+                            <asp:LinkButton Class="footerlinks badge badge-pill badge-Secondary" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Admin Login</asp:LinkButton>
+                            <asp:LinkButton Class="footerlinks badge badge-pill badge-Secondary" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click" Visible="false">Author Management</asp:LinkButton>
+                            <asp:LinkButton Class="footerlinks badge badge-pill badge-Secondary" ID="LinkButton8" runat="server" OnClick="LinkButton8_Click" Visible="false">Publisher Management</asp:LinkButton>
+                            <asp:LinkButton Class="footerlinks badge badge-pill badge-Secondary" ID="LinkButton9" runat="server" OnClick="LinkButton9_Click" Visible="false">Book Inventory</asp:LinkButton>
+                            <asp:LinkButton Class="footerlinks badge badge-pill badge-Secondary" ID="LinkButton10" runat="server" OnClick="LinkButton10_Click" Visible="false">Book Issuing</asp:LinkButton>
+                            <asp:LinkButton Class="footerlinks badge badge-pill badge-Secondary" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click" Visible="false">Member Management</asp:LinkButton>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div id="footer2" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 text-center">
+                          
+               <p style="color:whitesmoke"> &copy All right Reserved. 
+                   <a class="footerlinks" href="#" target="_blank">
+                    destinedlife @dl </a>
+            </p>
+                    </div>
+                </div>
+            </div>
+          
+        </footer>
+
+    </form>
+</body>
+</html>
