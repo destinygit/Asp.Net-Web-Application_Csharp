@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StaticStructure.Master" AutoEventWireup="true" CodeBehind="adminlogin.aspx.cs" Inherits="e_Library_mgmt.WebForm1" %>
+﻿<%@ Page Title="Digital Library" Language="C#" MasterPageFile="~/StaticStructure.Master" AutoEventWireup="true" CodeBehind="adminlogin.aspx.cs" Inherits="e_Library_mgmt.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 </asp:Content>

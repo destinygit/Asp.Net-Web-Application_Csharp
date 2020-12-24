@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StaticStructure.Master" AutoEventWireup="true" CodeBehind="AdminMembermgmt.aspx.cs" Inherits="e_Library_mgmt.WebForm8" %>
+﻿<%@ Page Title="Digital Library" Language="C#" MasterPageFile="~/StaticStructure.Master" AutoEventWireup="true" CodeBehind="AdminMembermgmt.aspx.cs" Inherits="e_Library_mgmt.WebForm8" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
        $(document).ready(function () {
@@ -207,17 +207,22 @@
                        <!-- Gid Table -->
 
                         <div class="row">
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LibraryDatabaseConnectionString %>" SelectCommand="SELECT * FROM [Member_Master_tbl]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:des_eLibraryConnectionString %>' SelectCommand="SELECT * FROM [Member_Master_tbl]"></asp:SqlDataSource>
                         <div class="col mx-auto">
                             <asp:GridView class="table table-striped table-bordered" 
                                 ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Member_Id" DataSourceID="SqlDataSource1">
                                 <Columns>
-                                    <asp:BoundField DataField="Member_Id" HeaderText="User ID" ReadOnly="True" SortExpression="Member_Id" />
-                                    <asp:BoundField DataField="Full_Name" HeaderText="Full Name" SortExpression="Full_Name" />
-                                    <asp:BoundField DataField="Account_Status" HeaderText="Account Status" SortExpression="Account_Status" />
-                                    <asp:BoundField DataField="Contact_no" HeaderText="Contact No" SortExpression="Contact_no" />
+                                    <asp:BoundField DataField="Full_Name" HeaderText="Full_Name" SortExpression="Full_Name" />
+                                    <asp:BoundField DataField="DateOfBirth" HeaderText="DateOfBirth" SortExpression="DateOfBirth" />
+                                    <asp:BoundField DataField="Contacts_No" HeaderText="Contacts_No" SortExpression="Contacts_No" />
                                     <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                                     <asp:BoundField DataField="Province" HeaderText="Province" SortExpression="Province" />
+                                    <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
+                                    <asp:BoundField DataField="PinCode" HeaderText="PinCode" SortExpression="PinCode"></asp:BoundField>
+                                    <asp:BoundField DataField="Full_Address" HeaderText="Full_Address" SortExpression="Full_Address"></asp:BoundField>
+                                    <asp:BoundField DataField="Member_ID" HeaderText="Member_ID" ReadOnly="True" SortExpression="Member_ID"></asp:BoundField>
+                                    <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password"></asp:BoundField>
+                                    <asp:BoundField DataField="Account_Status" HeaderText="Account_Status" SortExpression="Account_Status"></asp:BoundField>
                                 </Columns>
                             </asp:GridView>
 

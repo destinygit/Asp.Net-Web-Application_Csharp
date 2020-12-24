@@ -245,7 +245,7 @@ namespace e_Library_mgmt
                     cmd.Parameters.AddWithValue("@edition", TextBox4.Text.Trim());
                     cmd.Parameters.AddWithValue("@book_cost", TextBox5.Text.Trim());
                     cmd.Parameters.AddWithValue("@no_of_pages", TextBox6.Text.Trim());
-                    cmd.Parameters.AddWithValue("@book_description", TextBox6.Text.Trim());
+                    cmd.Parameters.AddWithValue("@book_description", TextBox10.Text.Trim());
                     cmd.Parameters.AddWithValue("@actual_stock", actual_stock.ToString());
                     cmd.Parameters.AddWithValue("@current_stock", current_stock.ToString());
                     cmd.Parameters.AddWithValue("@book_img_link", filepath);
@@ -255,6 +255,8 @@ namespace e_Library_mgmt
                     con.Close();
                     GridView1.DataBind();
                     Response.Write("<script>alert('Book Updated Successfully');</script>");
+                    ClearForm();
+                    GridView1.DataBind();
 
 
                 }

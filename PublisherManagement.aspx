@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StaticStructure.Master" AutoEventWireup="true" CodeBehind="PublisherManagement.aspx.cs" Inherits="e_Library_mgmt.WebForm6" %>
+﻿<%@ Page Title="Digital Library" Language="C#" MasterPageFile="~/StaticStructure.Master" AutoEventWireup="true" CodeBehind="PublisherManagement.aspx.cs" Inherits="e_Library_mgmt.WebForm6" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
        $(document).ready(function () {
@@ -140,13 +140,13 @@
                        <!-- Gid Table -->
 
                         <div class="row">
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LibraryDatabaseConnectionString %>" SelectCommand="SELECT * FROM [Publisher_Master_tbl]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:des_eLibraryConnectionString %>' SelectCommand="SELECT * FROM [Publisher_Master_tbl]"></asp:SqlDataSource>
                         <div class="col">
-                            <asp:GridView class="table table-striped table-bordered" 
+                            <asp:GridView class="table table-striped table-bordered"
                                 ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="PublisherId" DataSourceID="SqlDataSource1">
                                 <Columns>
-                                    <asp:BoundField DataField="PublisherId" HeaderText="Publisher Id" ReadOnly="True" SortExpression="PublisherId" />
-                                    <asp:BoundField DataField="Publisher_Name" HeaderText="Publisher Name" SortExpression="Publisher_Name" />
+                                    <asp:BoundField DataField="PublisherId" HeaderText="PublisherId" ReadOnly="True" SortExpression="PublisherId" />
+                                    <asp:BoundField DataField="Publisher_Name" HeaderText="Publisher_Name" SortExpression="Publisher_Name" />
                                 </Columns>
                             </asp:GridView>
 

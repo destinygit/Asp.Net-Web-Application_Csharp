@@ -45,6 +45,8 @@ namespace e_Library_mgmt
                 Response.Write("<script>alert('Wrong Book ID or Member ID');</script>");
             }
         }
+
+        //IssueBooks
         void IssueBook()
         {
             try
@@ -73,7 +75,7 @@ namespace e_Library_mgmt
 
                 con.Close();
                 Response.Write("<script>alert('Book Issued Successfully');</script>");
-
+                ClearForm();
                 GridView1.DataBind();
             }
             catch (Exception ex)
@@ -124,6 +126,7 @@ namespace e_Library_mgmt
                     con.Close();
 
                     Response.Write("<script>alert('Book Returned Successfully');</script>");
+                    ClearForm();
                     GridView1.DataBind();
 
                     con.Close();
@@ -263,12 +266,35 @@ namespace e_Library_mgmt
                     Response.Write("<script>alert('Wrong User ID');</script>");
                 }
 
+                SqlCommand cmdd = new SqlCommand("select Full_Name from Book_Issue_tbl WHERE Member_Id='" + TextBox1.Text.Trim() + "'", con);
+                SqlDataAdapter dda = new SqlDataAdapter(cmdd);
+                DataTable ddr = new DataTable();
+                dda.Fill(ddr);
+                if (ddr.Rows.Count >= 1)
+                {
+                    TextBox5.Text = ddr.Rows[0]["Issue_Date"].ToString();
+                    TextBox6.Text = ddr.Rows[0]["Due_Date"].ToString();
+                }
+                else
+                {
+                    Response.Write("<script>alert('Date not Found');</script>");
+                }
 
             }
             catch (Exception ex)
             {
                 Response.Write("<script>alert('" + "GetNames" + ex.Message + "');</script>");
             }
+        }
+
+        void ClearForm()
+        {
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox4.Text = "";
+            TextBox5.Text = "";
+            TextBox6.Text = "";
+            
         }
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)

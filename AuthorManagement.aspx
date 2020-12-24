@@ -132,16 +132,14 @@
                        <!-- Gid Table -->
 
                         <div class="row">
-                          <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="
-                                <%$ ConnectionStrings:LibraryDatabaseConnectionString %>" SelectCommand="SELECT * FROM 
-                                [Author_Master_tbl]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:des_eLibraryConnectionString %>' SelectCommand="SELECT * FROM [Author_Master_tbl]"></asp:SqlDataSource>
                         <div class="col">
                             
-                            <asp:GridView class="table table-striped table-bordered" 
+                            <asp:GridView class="table table-striped table-bordered"
                                 ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="AuthorId" DataSourceID="SqlDataSource1">
                                 <Columns>
-                                    <asp:BoundField DataField="AuthorId" HeaderText="Author Id" ReadOnly="True" SortExpression="AuthorId" />
-                                    <asp:BoundField DataField="Author_Name" HeaderText="Author Name" SortExpression="Author_Name" />
+                                    <asp:BoundField DataField="AuthorId" HeaderText="AuthorId" ReadOnly="True" SortExpression="AuthorId" />
+                                    <asp:BoundField DataField="Author_Name" HeaderText="Author_Name" SortExpression="Author_Name" />
                                 </Columns>
                             </asp:GridView>
 
