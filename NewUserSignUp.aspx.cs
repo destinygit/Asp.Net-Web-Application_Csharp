@@ -100,7 +100,7 @@ namespace e_Library_mgmt
                 cmd.ExecuteNonQuery();
                
                 Response.Write("<script>alert('Sign Up was Successful');</script>");
-                Response.Redirect("homepage.aspx",false);
+                Response.Redirect("UserLogin.aspx",false);
                 //string message = "Sign Up was Successful";
                 //MessageBox.Show(message);
 

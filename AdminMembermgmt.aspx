@@ -213,8 +213,8 @@
                                 ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Member_Id" DataSourceID="SqlDataSource1">
                                 <Columns>
                                     <asp:BoundField DataField="Full_Name" HeaderText="Full_Name" SortExpression="Full_Name" />
-                                    <asp:BoundField DataField="DateOfBirth" HeaderText="DateOfBirth" SortExpression="DateOfBirth" />
-                                    <asp:BoundField DataField="Contacts_No" HeaderText="Contacts_No" SortExpression="Contacts_No" />
+                                    <asp:BoundField DataField="Date_of_Birth" HeaderText="Date_of_Birth" SortExpression="Date_of_Birth" />
+                                    <asp:BoundField DataField="Contact_no" HeaderText="Contact_no" SortExpression="Contact_no" />
                                     <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                                     <asp:BoundField DataField="Province" HeaderText="Province" SortExpression="Province" />
                                     <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />

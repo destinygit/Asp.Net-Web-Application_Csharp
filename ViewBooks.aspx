@@ -1,10 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StaticStructure.Master" AutoEventWireup="true" CodeBehind="ViewBooks.aspx.cs" Inherits="e_Library_mgmt.WebForm10" %>
+﻿//<%@ Page Title="" Language="C#" MasterPageFile="~/StaticStructure.Master" AutoEventWireup="true" CodeBehind="ViewBooks.aspx.cs" Inherits="e_Library_mgmt.WebForm10" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
-        });
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable({
+                columnDefs: [{
+                    orderable: false,
+                    className: 'select-checkbox',
+                    targets: 0
+                }],
+                select: {
+                    style: 'os',
+                    selector: 'tr:first-child'
+                },
+                order: [[1, 'asc']]
+            });
+           
+
 
     </script>
 

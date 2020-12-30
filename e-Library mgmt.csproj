@@ -147,8 +147,13 @@
   <ItemGroup>
     <Content Include="Book_Inventory\book-wallpaper-full-hd-1920x1080-128859.jpg" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\css\jquery.dataTables.min.css" />
+    <Content Include="bootstrap\css\select.dataTables.min.css" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="bootstrap\js\dataTables.select.min.js" />
+    <Content Include="bootstrap\js\jquery-3.5.1.js" />
     <Content Include="bootstrap\js\jquery-3.5.1.slim.min.js" />
+    <Content Include="bootstrap\js\jquery.dataTables.min.js" />
     <Content Include="bootstrap\js\popper.min.js" />
     <Content Include="css\CustomrStylesheet.css" />
     <Content Include="Datatables\css\jquery.dataTables.min.css" />
